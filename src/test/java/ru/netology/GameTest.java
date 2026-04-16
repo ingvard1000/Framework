@@ -6,7 +6,7 @@ import ru.netology.NotRegisteredException;
 public class GameTest {
 
     Player player1 = new Player(1, "Player1", 20);
-    Player player2 = new Player(2, "Player2", 40);
+    Player player2 = new Player(2, "Player2", 15);
     Player player3 = new Player(3, "Player3", 10);
     Player player4 = new Player(4, "Player4", 50);
     Player player5 = new Player(5, "Player5", 20);
@@ -14,7 +14,7 @@ public class GameTest {
     Game game = new Game();
 
     @Test
-    public void fourWin() {
+    public void secondWin() {
         game.register(player4);
         game.register(player2);
 
@@ -25,11 +25,11 @@ public class GameTest {
     }
 
     @Test
-    public void secondWin() {
+    public void firstWin() {
         game.register(player1);
         game.register(player2);
 
-        int expected = 2;
+        int expected = 1;
         int actual = game.round("Player1", "Player2");
 
         Assertions.assertEquals(expected, actual);
